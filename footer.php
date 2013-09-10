@@ -1,6 +1,6 @@
 
 		<div id="footer">
-			This is the footer.
+			&copy; <?php echo date( 'Y' ); ?> <?php bloginfo( 'title' ); ?> All Rights Reserved
 		</div><!-- /#footer -->
 
 	</body>
