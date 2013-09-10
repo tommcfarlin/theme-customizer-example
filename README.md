@@ -12,6 +12,6 @@ Note that this theme is not in development. It serves as a demo for the companio
 
 ## Changelog
 
-_0.1.0 (2013 September 9)_
+_0.1.0 (2013 September 10)_
 
 * Initial commit of the basic theme (without the customizer)
