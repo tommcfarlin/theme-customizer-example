@@ -12,6 +12,10 @@ Note that this theme is not in development. It serves as a demo for the companio
 
 ## Changelog
 
+_0.2.0 (2013 September 19)_
+
+* Committing a working version of the theme with the Theme Customizer implemented using the `refresh` transport method.
+
 _0.1.0 (2013 September 10)_
 
 * Initial commit of the basic theme (without the customizer)
