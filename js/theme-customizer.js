@@ -7,4 +7,10 @@
 		} );
 	});
 
+	wp.customize( 'tcx_display_header', function( value ) {
+		value.bind( function( to ) {
+			false === to ? $( '#header' ).hide() : $( '#header' ).show();
+		} );
+	});
+
 })( jQuery );
