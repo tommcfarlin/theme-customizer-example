@@ -12,6 +12,9 @@ Note that this theme is not in development. It serves as a demo for the companio
 
 ## Changelog
 
+_0.4.0 (2013 September 24)_
+* Implementing the 'Display Options' section with a 'Display Header' setting and checkbox control
+
 _0.3.0 (2013 September 19)_
 
 * Implementing the `theme-customizer.js` file for using the `postMessage` transport method.
