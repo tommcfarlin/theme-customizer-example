@@ -12,6 +12,9 @@ Note that this theme is not in development. It serves as a demo for the companio
 
 ## Changelog
 
+_0.5.0_ (2013 September 25)_
+* Implementing the "Color Scheme" options, the "Theme Font" options, and the "Copyright Message" option
+
 _0.4.0 (2013 September 24)_
 * Implementing the 'Display Options' section with a 'Display Header' setting and checkbox control
 
