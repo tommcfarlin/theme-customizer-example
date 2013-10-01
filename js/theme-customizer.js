@@ -78,4 +78,24 @@
 		});
 	});
 
+	wp.customize( 'tcx_background_image', function( value ) {
+		value.bind( function( to ) {
+
+			0 === $.trim( to ).length ?
+				$( 'body' ).css( 'background-image', '' ) :
+				$( 'body' ).css( 'background-image', 'url( ' + to + ')' );
+
+		});
+	});
+
+	wp.customize( 'tcx_example_file', function( value ) {
+		value.bind( function( to ) {
+
+			0 === $.trim( to ).length ?
+				$( '#file-download' ).hide() :
+				$( '#file-download' ).show();
+
+		});
+	});
+
 })( jQuery );
