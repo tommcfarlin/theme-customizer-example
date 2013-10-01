@@ -2,15 +2,17 @@
 
 Theme Customizer Example is a very simple theme used to demonstrate how to integrate the [Theme Customizer](https://codex.wordpress.org/Theme_Customization_API) into a WordPress theme.
 
-
 ## Installation
 
 Note that this theme is not in development. It serves as a demo for the companion article.
 
 1. Clone the repository or extract the archive to your `wp-content/themes` directory
-1. Verify that the theme is available in your Themes dashboard
+2. Verify that the theme is available in your Themes dashboard
 
 ## Changelog
+
+_0.6.0_ (2013 September 30)
+* Implemented `WP_Customize_Image_Upload` for setting the background image.
 
 _0.5.0_ (2013 September 25)_
 * Implementing the "Color Scheme" options, the "Theme Font" options, and the "Copyright Message" option
