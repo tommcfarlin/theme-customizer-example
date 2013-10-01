@@ -6,7 +6,7 @@
  * @param      object    $wp_customize    The WordPress Theme Customizer
  * @package    tcx
  * @since      0.2.0
- * @version    0.2.0
+ * @version    0.6.0
  */
 function tcx_register_theme_customizer( $wp_customize ) {
 
@@ -31,7 +31,7 @@ function tcx_register_theme_customizer( $wp_customize ) {
 	);
 
 	/*-----------------------------------------------------------*
-	 * Defining our own section
+	 * Defining our own 'Display Options' section
 	 *-----------------------------------------------------------*/
 
 	$wp_customize->add_section(
@@ -65,7 +65,6 @@ function tcx_register_theme_customizer( $wp_customize ) {
 		'tcx_color_scheme',
 		array(
 			'default'   => 'normal',
-			'type'      => 'option',
 			'transport' => 'postMessage'
 		)
 	);
@@ -125,6 +124,39 @@ function tcx_register_theme_customizer( $wp_customize ) {
 		)
 	);
 
+	/*-----------------------------------------------------------*
+	 * Defining our own 'Advanced Options' section
+	 *-----------------------------------------------------------*/
+
+	$wp_customize->add_section(
+		'tcx_advanced_options',
+		array(
+			'title'     => 'Advanced Options',
+			'priority'  => 201
+		)
+	);
+
+	/* Background Image */
+	$wp_customize->add_setting(
+		'tcx_background_image',
+		array(
+		    'default'      => '',
+		    'transport'    => 'postMessage'
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control(
+			$wp_customize,
+			'tcx_background_image',
+			array(
+			    'label'    => 'Background Image',
+			    'settings' => 'tcx_background_image',
+			    'section'  => 'tcx_advanced_options'
+			)
+		)
+	);
+
 } // end tcx_register_theme_customizer
 add_action( 'customize_register', 'tcx_register_theme_customizer' );
 
@@ -141,6 +173,9 @@ function tcx_sanitize_copyright( $input ) {
 	return strip_tags( stripslashes( $input ) );
 } // end tcx_sanitize_copyright
 
+/**
+ * TODO
+ */
 function tcx_customizer_css() {
 ?>
 	 <style type="text/css">
@@ -149,17 +184,22 @@ function tcx_customizer_css() {
 
 		 	font-family: <?php echo get_theme_mod( 'tcx_font' ); ?>
 
-		 	<?php if ( 'normal' === get_theme_mod( 'tcx_color_scheme' ) ) { ?>
-
-			 	background: #000;
-			 	color:      #fff;
-
-		 	<?php } else { ?>
+		 	<?php if ( 'normal' === get_theme_mod( 'tcx_color_scheme' ) || '' === get_theme_mod( 'tcx_color_scheme' ) ) { ?>
 
 			 	background: #fff;
 			 	color:      #000;
 
+		 	<?php } else { ?>
+
+			 	background: #000;
+			 	color:      #fff;
+
 		 	<?php } // end if/else ?>
+
+		 	<?php if ( 0 < count( strlen( ( $background_image_url = get_theme_mod( 'tcx_background_image' ) ) ) ) ) { ?>
+		 		background-image: url( <?php echo $background_image_url; ?> );
+		 	<?php } // end if ?>
+
 		 }
 
 	     a { color: <?php echo get_theme_mod( 'tcx_link_color' ); ?>; }
@@ -178,7 +218,7 @@ add_action( 'wp_head', 'tcx_customizer_css' );
  *
  * @package    tcx
  * @since      0.3.0
- * @version    0.3.0
+ * @version    0.6.0
  */
 function tcx_customizer_live_preview() {
 
@@ -186,7 +226,7 @@ function tcx_customizer_live_preview() {
 		'tcx-theme-customizer',
 		get_template_directory_uri() . '/js/theme-customizer.js',
 		array( 'jquery', 'customize-preview' ),
-		'0.5.0'
+		'0.6.0',
 		true
 	);
 
