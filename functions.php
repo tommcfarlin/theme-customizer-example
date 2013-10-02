@@ -6,7 +6,7 @@
  * @param      object    $wp_customize    The WordPress Theme Customizer
  * @package    tcx
  * @since      0.2.0
- * @version    0.6.0
+ * @version    1.0.0
  */
 function tcx_register_theme_customizer( $wp_customize ) {
 
@@ -23,7 +23,7 @@ function tcx_register_theme_customizer( $wp_customize ) {
 			$wp_customize,
 			'link_color',
 			array(
-			    'label'      => __( 'Link Color', 'tcx' ),
+			    'label'      => 'Link Color',
 			    'section'    => 'colors',
 			    'settings'   => 'tcx_link_color'
 			)
@@ -167,14 +167,18 @@ add_action( 'customize_register', 'tcx_register_theme_customizer' );
  * @return     string              The sanitized string
  * @package    tcx
  * @since      0.5.0
- * @version    0.1.0
+ * @version    1.0.0
  */
 function tcx_sanitize_copyright( $input ) {
 	return strip_tags( stripslashes( $input ) );
 } // end tcx_sanitize_copyright
 
 /**
- * TODO
+ * Writes styles out the `<head>` element of the page based on the configuration options
+ * saved in the Theme Customizer.
+ *
+ * @since      0.2.0
+ * @version    1.0.0
  */
 function tcx_customizer_css() {
 ?>
@@ -210,7 +214,7 @@ function tcx_customizer_css() {
 
 	 </style>
 <?php
-}
+} // end tcx_customizer_css
 add_action( 'wp_head', 'tcx_customizer_css' );
 
 /**
@@ -218,7 +222,7 @@ add_action( 'wp_head', 'tcx_customizer_css' );
  *
  * @package    tcx
  * @since      0.3.0
- * @version    0.6.0
+ * @version    1.0.0
  */
 function tcx_customizer_live_preview() {
 
@@ -226,7 +230,7 @@ function tcx_customizer_live_preview() {
 		'tcx-theme-customizer',
 		get_template_directory_uri() . '/js/theme-customizer.js',
 		array( 'jquery', 'customize-preview' ),
-		'0.6.0',
+		'1.0.0',
 		true
 	);
 
