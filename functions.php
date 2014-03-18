@@ -178,7 +178,7 @@ function tcx_sanitize_copyright( $input ) {
  * saved in the Theme Customizer.
  *
  * @since      0.2.0
- * @version    1.0.0
+ * @version    1.0.1
  */
 function tcx_customizer_css() {
 ?>
