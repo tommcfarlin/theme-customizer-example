@@ -186,7 +186,7 @@ function tcx_customizer_css() {
 
 		 body {
 
-		 	font-family: <?php echo get_theme_mod( 'tcx_font' ); ?>
+		 	font-family: <?php echo get_theme_mod( 'tcx_font' ); ?>;
 
 		 	<?php if ( 'normal' === get_theme_mod( 'tcx_color_scheme' ) || '' === get_theme_mod( 'tcx_color_scheme' ) ) { ?>
 
