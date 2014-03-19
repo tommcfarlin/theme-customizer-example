@@ -11,6 +11,9 @@ Note that this theme is not in development. It serves as a demo for the companio
 
 ## Changelog
 
+_1.0.1_ (2014 March 19)
+* Added a semicolon to allow the body's *font-family* to show correctly.
+
 _1.0.0_ (2013 October 2)
 * Adding code comments, updating certain tags, and making sure the code is up to the WordPress coding standards
 * Changing the anchor's target in the `index.php` template
