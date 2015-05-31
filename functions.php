@@ -229,7 +229,7 @@ function tcx_customizer_live_preview() {
 	wp_enqueue_script(
 		'tcx-theme-customizer',
 		get_template_directory_uri() . '/js/theme-customizer.js',
-		array( 'jquery', 'customize-preview' ),
+		array( 'customize-preview' ),
 		'1.0.0',
 		true
 	);
