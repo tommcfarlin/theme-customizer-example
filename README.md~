@@ -11,11 +11,6 @@ Note that this theme is not in development. It serves as a demo for the companio
 
 ## Changelog
 
-_1.0.2_ (2015 August 7)
-* Added `'sanitize_callback' => 'tcx_sanitize_input'` to all `add_setting()` methods in `functions.php`, which are required when adding themes to the WordPress theme repository.
-* Changed `tcx_sanitize_copyright` to `tcx_sanitize_input` for readability purposes
-* Updating the version number of the theme
-
 _1.0.1_ (2014 March 19)
 * Added a semicolon to allow the body's *font-family* to show correctly.
 

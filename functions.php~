@@ -13,9 +13,8 @@ function tcx_register_theme_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'tcx_link_color',
 		array(
-			'default'     	    => '#000000',
-			'sanitize_callback' => 'tcx_sanitize_input',
-			'transport'   	    => 'postMessage'
+			'default'     => '#000000',
+			'transport'   => 'postMessage'
 		)
 	);
 
@@ -47,9 +46,8 @@ function tcx_register_theme_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'tcx_display_header',
 		array(
-			'default'    	    =>  'true',
-			'sanitize_callback' => 'tcx_sanitize_input',
-			'transport'  	    =>  'postMessage'
+			'default'    =>  'true',
+			'transport'  =>  'postMessage'
 		)
 	);
 
@@ -66,9 +64,8 @@ function tcx_register_theme_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'tcx_color_scheme',
 		array(
-			'default'   	    => 'normal',
-			'sanitize_callback' => 'tcx_sanitize_input',
-			'transport' 	    => 'postMessage'
+			'default'   => 'normal',
+			'transport' => 'postMessage'
 		)
 	);
 
@@ -89,9 +86,8 @@ function tcx_register_theme_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'tcx_font',
 		array(
-			'default'   	    => 'times',
-			'sanitize_callback' => 'tcx_sanitize_input',
-			'transport' 	    => 'postMessage'
+			'default'   => 'times',
+			'transport' => 'postMessage'
 		)
 	);
 
@@ -114,7 +110,7 @@ function tcx_register_theme_customizer( $wp_customize ) {
 		'tcx_footer_copyright_text',
 		array(
 			'default'            => 'All Rights Reserved',
-			'sanitize_callback'  => 'tcx_sanitize_input',
+			'sanitize_callback'  => 'tcx_sanitize_copyright',
 			'transport'          => 'postMessage'
 		)
 	);
@@ -144,9 +140,8 @@ function tcx_register_theme_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'tcx_background_image',
 		array(
-		    	'default'      	    => '',
-			'sanitize_callback' => 'tcx_sanitize_input',
-		    	'transport'    	    => 'postMessage'
+		    'default'      => '',
+		    'transport'    => 'postMessage'
 		)
 	);
 
@@ -172,11 +167,11 @@ add_action( 'customize_register', 'tcx_register_theme_customizer' );
  * @return     string              The sanitized string
  * @package    tcx
  * @since      0.5.0
- * @version    1.0.2
+ * @version    1.0.0
  */
-function tcx_sanitize_input( $input ) {
+function tcx_sanitize_copyright( $input ) {
 	return strip_tags( stripslashes( $input ) );
-} // end tcx_sanitize_input
+} // end tcx_sanitize_copyright
 
 /**
  * Writes styles out the `<head>` element of the page based on the configuration options
